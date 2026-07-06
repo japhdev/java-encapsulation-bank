@@ -11,5 +11,10 @@ public class PruebaBanco {
         System.out.println("Titular: " + cuenta.getTitular());
         System.out.println("Numero de Cuenta: " + cuenta.getNumeroCuenta());
         System.out.println("Saldo inicial: $: " + cuenta.consultarSaldo());
+
+
+        // Deposito de dinero
+        System.out.println("\n ===DEPOSITO==");
+        cuenta.depositar(500.0);
     }
 }
