@@ -1,0 +1,11 @@
+# Archivos compilados
+*.class
+
+# Carpeta de compilación
+bin/
+
+# Configuración de VS Code
+.vscode/
+
+# Carpeta de salida (si la usas)
+out/
