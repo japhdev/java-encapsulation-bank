@@ -1,6 +1,6 @@
-# 🏦 Sistema de Cuenta Bancaria en Java
+# Sistema de Cuenta Bancaria en Java
 
-## 📋 Descripción
+## Descripción
 
 Este proyecto es un **sistema básico de gestión de cuentas bancarias** desarrollado en Java. Implementa los principios fundamentales de la Programación Orientada a Objetos (POO) como encapsulamiento, métodos getters y validación de datos.
 
