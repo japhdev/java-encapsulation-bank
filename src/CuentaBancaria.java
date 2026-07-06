@@ -6,10 +6,10 @@ public class CuentaBancaria {
     private String titular;
 
     // Constructor
-    CuentaBancaria(String numeroCuenta, String titular, double saldo){
+    CuentaBancaria(String numeroCuenta, String titular, double saldoInicial){
         this.numeroCuenta = numeroCuenta;
         this.titular = titular;
-        this.saldo = saldo;
+        this.saldo = saldoInicial;
 
     }
 
@@ -28,12 +28,12 @@ public class CuentaBancaria {
     // METODO retirar (void)
     public void retirar(double cantidad){
 
-        if(tieneSaldoSuficiente(cantidad)){
+        if (tieneSaldoSuficiente(cantidad)){
             saldo -= cantidad;
-            System.out.println("Tu saldo actual es: $" + saldo);
+            System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
 
             
-        }else{System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
+        } else {System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
 
         }
         
