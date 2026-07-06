@@ -24,5 +24,9 @@ public class PruebaBanco {
         // 5. Intento de retiro mayor al saldo disponible 
         System.out.println("\n ===RETIRO EXCESIVO===");
         cuenta.retirar(2000.0);
+
+        // 6. Mostrar saldo final
+        System.out.println("\n=== SALDO FINAL ===");
+        System.out.println("Saldo actual: $" + cuenta.consultarSaldo());
     }
 }
