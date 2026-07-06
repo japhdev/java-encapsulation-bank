@@ -22,7 +22,7 @@ public class PruebaBanco {
         cuenta.retirar(400.0);
 
         // 5. Intento de retiro mayor al saldo disponible 
-        System.out.println("===RETIRO EXCESIVO===");
+        System.out.println("\n ===RETIRO EXCESIVO===");
         cuenta.retirar(2000.0);
     }
 }

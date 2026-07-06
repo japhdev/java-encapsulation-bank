@@ -15,11 +15,13 @@ public class CuentaBancaria {
 
     // METODO depositar
     public void depositar(double cantidad){
-        if(cantidad <= 0){
-            System.out.println("deposita minimo $1");
+        if(cantidad > 0){
+            saldo += cantidad;
+            System.out.println("Deposito exitoso. Nuevo saldo: $" + saldo);
+        }else{
+            System.out.println("Cantidad invalida");
         }
-        saldo += cantidad;
-            System.out.println("Tu saldo actual es: $" + saldo);
+        
 
     }
 
@@ -32,7 +34,7 @@ public class CuentaBancaria {
 
             
         }else{System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
-            
+
         }
         
         
