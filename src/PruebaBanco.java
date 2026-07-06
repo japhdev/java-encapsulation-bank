@@ -13,8 +13,12 @@ public class PruebaBanco {
         System.out.println("Saldo inicial: $: " + cuenta.consultarSaldo());
 
 
-        // Deposito de dinero
-        System.out.println("\n ===DEPOSITO==");
+        // 3.Deposito de dinero
+        System.out.println("\n ===DEPOSITO===");
         cuenta.depositar(500.0);
+
+        // 4. Retiro de dinero
+        System.out.println("\n ===RETIRO===");
+        cuenta.retirar(400.0);
     }
 }

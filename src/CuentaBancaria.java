@@ -30,7 +30,7 @@ public class CuentaBancaria {
             System.out.println("Saldo insuficiente");
         }
         saldo -= cantidad;
-        System.out.println(saldo);
+        System.out.println("Tu saldo actual es: $" + saldo);
         
     }
 
