@@ -19,7 +19,7 @@ public class CuentaBancaria {
             System.out.println("deposita minimo $1");
         }
         saldo += cantidad;
-            System.out.println(saldo);
+            System.out.println("Tu saldo actual es: $" + saldo);
 
     }
 
