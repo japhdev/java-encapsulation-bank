@@ -26,11 +26,16 @@ public class CuentaBancaria {
     // METODO retirar (void)
     public void retirar(double cantidad){
 
-        if(cantidad > saldo){
-            System.out.println("Saldo insuficiente");
+        if(tieneSaldoSuficiente(cantidad)){
+            saldo -= cantidad;
+            System.out.println("Tu saldo actual es: $" + saldo);
+
+            
+        }else{System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
+            
         }
-        saldo -= cantidad;
-        System.out.println("Tu saldo actual es: $" + saldo);
+        
+        
         
     }
 
