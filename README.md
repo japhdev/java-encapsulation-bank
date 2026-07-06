@@ -1,18 +1,48 @@
-## Getting Started
+# 🏦 Sistema de Cuenta Bancaria en Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 📋 Descripción
 
-## Folder Structure
+Este proyecto es un **sistema básico de gestión de cuentas bancarias** desarrollado en Java. Implementa los principios fundamentales de la Programación Orientada a Objetos (POO) como encapsulamiento, métodos getters y validación de datos.
 
-The workspace contains two folders by default, where:
+El sistema permite:
+- Crear cuentas bancarias con número, titular y saldo inicial
+- Depositar dinero
+- Retirar dinero (con validación de saldo suficiente)
+- Consultar saldo actual
+- Obtener información del titular y número de cuenta
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+---
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## Objetivos de Aprendizaje
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Este proyecto fue creado para practicar y demostrar el dominio de:
 
-## Dependency Management
+**Encapsulamiento**    Atributos `private` protegidos 
+**Constructores**      Inicializacion de objetos con `this` 
+**Métodos**           `void`, `double`, `String`, `boolean` 
+**Validaciones**       Control de depósitos y retiros 
+**Getters**            Acceso controlado a atributos privados 
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+---
+
+## Tecnologías Utilizadas
+
+- **Java 17+**       Lenguaje de programación
+- **JDK**            Java Development Kit
+- **Terminal/CMD**   Para compilación y ejecución
+
+---
+
+## Estructura del Proyecto
+
+JAVA-ENCAPSULATION-BANK/
+│
+├── .git/
+├── .vscode/
+├── lib/
+├── src/
+│   ├── CuentaBancaria.java
+│   └── PruebaBanco.java
+│
+├── README.md
+└── .gitignore
