@@ -1,16 +1,16 @@
 public class CuentaBancaria {
 
     // Atributos PRIVATE
-    private String numeroCuenta;
+    private int numeroCuenta;
     private double saldo;
     private String titular;
+    private static int siguienteNumeroCuenta = 1000;
 
     // Constructor
-    CuentaBancaria(String numeroCuenta, String titular, double saldoInicial) {
-        this.numeroCuenta = numeroCuenta;
+    CuentaBancaria( String titular, double saldoInicial) {
+        numeroCuenta = siguienteNumeroCuenta++;
         this.titular = titular;
         this.saldo = saldoInicial;
-
     }
 
     // METODO depositar
@@ -21,7 +21,6 @@ public class CuentaBancaria {
         } else {
             System.out.println("Cantidad invalida");
         }
-
     }
 
     // METODO retirar (void)
@@ -46,7 +45,7 @@ public class CuentaBancaria {
     }
 
     // METODO getNumeroCuenta (String)
-    public String getNumeroCuenta() {
+    public int getNumeroCuenta() {
         return numeroCuenta;
     }
 

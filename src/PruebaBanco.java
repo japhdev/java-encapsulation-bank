@@ -5,14 +5,13 @@ public class PruebaBanco {
     public static void main(String[] args){
 
         // 1. Crear una cuenta
-        CuentaBancaria cuenta = new CuentaBancaria("123-313", "Alan Hernandez", 1000.0);
+        CuentaBancaria cuenta = new CuentaBancaria("Pablo Hernandez", 110);
 
         // 2.Mostras Informacion de la cuenta
         System.out.println("=====INFORMACION DE LA CUENTA=======");
         System.out.println("Titular: " + cuenta.getTitular());
         System.out.println("Numero de Cuenta: " + cuenta.getNumeroCuenta());
         System.out.println("Saldo inicial: $: " + cuenta.consultarSaldo());
-
 
         // 3.Deposito de dinero
         System.out.println("\n ===DEPOSITO===");
