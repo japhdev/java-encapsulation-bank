@@ -34,6 +34,11 @@ public class CuentaBancaria {
         }
     }
 
+    //
+    public void trasferir(CuentaBancaria destino, double cantidad) {
+
+    }
+
     // METODO consultarSaldo (double)
     public double consultarSaldo() {
         return saldo;
