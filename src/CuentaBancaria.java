@@ -35,7 +35,8 @@ public class CuentaBancaria {
 
         if (tieneSaldoSuficiente(cantidad)) {
             saldo -= cantidad;
-            System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
+            System.out.println("Retiro exitoso: $" + cantidad);
+            System.out.println("Nuevo saldo: $" + saldo);
             return true;
         } else {
             System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
@@ -45,11 +46,12 @@ public class CuentaBancaria {
 
     // METODO transferir
     public void transferir(CuentaBancaria destino, double cantidad) {
+
         if(this.retirar(cantidad )) {
             destino.depositar(cantidad);
             System.out.println("Transferencia exitosa: $" + cantidad);
-            System.out.println("De: "+ this.getTitular());
-            System.out.println("a: " + destino.getTitular());
+            System.out.println("De: " + this.getTitular() + " (" + this.getNumeroCuenta() + ")");
+            System.out.println("A: " + destino.getTitular() + " (" + destino.getNumeroCuenta() + ")");
         }else{
             System.out.println("No se completo la transferencia");
         }
