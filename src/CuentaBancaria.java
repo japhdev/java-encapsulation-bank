@@ -1,14 +1,15 @@
 public class CuentaBancaria {
 
     // Atributos PRIVATE
-    private int numeroCuenta;
+    
     private double saldo;
     private String titular;
-    private static int siguienteNumeroCuenta = 1000;
+    private String numeroCuenta;
+    
 
     // Constructor
     CuentaBancaria( String titular, double saldoInicial) {
-        numeroCuenta = siguienteNumeroCuenta++;
+        numeroCuenta = "CTA-" + (int)(Math.random() * 10000);
         this.titular = titular;
         this.saldo = saldoInicial;
     }
@@ -50,7 +51,7 @@ public class CuentaBancaria {
     }
 
     // METODO getNumeroCuenta (String)
-    public int getNumeroCuenta() {
+    public String getNumeroCuenta() {
         return numeroCuenta;
     }
 

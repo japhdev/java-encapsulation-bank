@@ -5,7 +5,7 @@ public class PruebaBanco {
     public static void main(String[] args){
 
         // 1. Crear una cuenta
-        CuentaBancaria cuenta = new CuentaBancaria("Pablo Hernandez", 110);
+        CuentaBancaria cuenta = new CuentaBancaria("Alan Pablo", 1200);
 
         // 2.Mostras Informacion de la cuenta
         System.out.println("=====INFORMACION DE LA CUENTA=======");
