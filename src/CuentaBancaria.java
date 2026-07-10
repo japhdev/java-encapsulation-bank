@@ -9,35 +9,62 @@ public class CuentaBancaria {
 
     // Constructor
     CuentaBancaria( String titular, double saldoInicial) {
-        numeroCuenta = "CTA-" + (int)(Math.random() * 10000);
+        this.numeroCuenta = "CTA-" + (int)(Math.random() * 10000);
         this.titular = titular;
         this.saldo = saldoInicial;
     }
 
     // METODO depositar
-    public void depositar(double cantidad) {
-        if (cantidad > 0) {
+    public boolean depositar(double cantidad) {
+        if (cantidad > 0) {     
             saldo += cantidad;
             System.out.println("Deposito exitoso. Nuevo saldo: $" + saldo);
+            return true;
         } else {
             System.out.println("Cantidad invalida");
+            return false;
         }
     }
 
-    // METODO retirar (void)
-    public void retirar(double cantidad) {
+    // METODO retirar 
+    public boolean retirar(double cantidad) {
 
         if (tieneSaldoSuficiente(cantidad)) {
             saldo -= cantidad;
             System.out.println("Retiro exitoso. Nuevo saldo: $" + saldo);
+            return true;
         } else {
             System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
+            return false;
         }
     }
 
-    //
-    public void trasferir(CuentaBancaria destino, double cantidad) {
+    // METODO transferir
+    public void transferir(CuentaBancaria destino, double cantidad) {
+        if(this.retirar(cantidad )) {
+            destino.depositar(cantidad);
+            System.out.println("Transferencia exitosa: $" + cantidad);
+            System.out.println("De: "+ this.getTitular());
+            System.out.println("a: " + destino.getTitular());
+        }else{
+            System.out.println("No se completo la transferencia");
+        }
+    }
 
+    // METODO tieneSaldoSuficiente (boolean)
+    public boolean tieneSaldoSuficiente(double cantidad) {
+        return saldo >= cantidad;
+    }
+    //METODO mostrarInformacion
+    public void mostrarInformacion(){
+        System.out.println("Titular: " + titular);
+        System.out.println("Numero de Cuenta: " + numeroCuenta);
+        System.out.println("Saldo: " + saldo);
+    }
+    
+    //METODO aplicarInteres (pendiente)
+    public void aplicarInteres(){
+        System.out.println("Esta cuenta no genera interes...");
     }
 
     // METODO consultarSaldo (double)
@@ -53,11 +80,6 @@ public class CuentaBancaria {
     // METODO getNumeroCuenta (String)
     public String getNumeroCuenta() {
         return numeroCuenta;
-    }
-
-    // METODO tieneSaldoSuficiente (boolean)
-    public boolean tieneSaldoSuficiente(double cantidad) {
-        return saldo >= cantidad;
     }
 
 }
