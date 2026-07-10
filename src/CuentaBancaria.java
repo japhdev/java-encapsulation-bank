@@ -1,7 +1,6 @@
 public class CuentaBancaria {
 
     // Atributos PRIVATE
-    
     private double saldo;
     private String titular;
     private String numeroCuenta;
@@ -9,7 +8,7 @@ public class CuentaBancaria {
 
     // Constructor
     CuentaBancaria( String titular, double saldoInicial) {
-        this.numeroCuenta = "CTA-" + (int)(Math.random() * 10000);
+        this.numeroCuenta = "CTA-" + (int)(Math.random() * 10000); // Solo para prueba *pendiente de modificar
         this.titular = titular;
         this.saldo = saldoInicial;
     }
@@ -18,16 +17,21 @@ public class CuentaBancaria {
     public boolean depositar(double cantidad) {
         if (cantidad > 0) {     
             saldo += cantidad;
-            System.out.println("Deposito exitoso. Nuevo saldo: $" + saldo);
+            System.out.println("Deposito exitoso: $" + cantidad);
+            System.out.println("Nuevo Saldo: $" + saldo);
             return true;
         } else {
-            System.out.println("Cantidad invalida");
+            System.out.println("Cantidad invalida para el deposito.");
             return false;
         }
     }
 
     // METODO retirar 
     public boolean retirar(double cantidad) {
+        if(cantidad <= 0) {
+            System.out.println("Cantidad invalida para el retiro.");
+            return false;
+        }
 
         if (tieneSaldoSuficiente(cantidad)) {
             saldo -= cantidad;
@@ -57,9 +61,13 @@ public class CuentaBancaria {
     }
     //METODO mostrarInformacion
     public void mostrarInformacion(){
+        System.out.println("==========================");
+        System.out.println("=INFORMACION DE LA CUENTA=");
+        System.out.println("==========================");
         System.out.println("Titular: " + titular);
         System.out.println("Numero de Cuenta: " + numeroCuenta);
         System.out.println("Saldo: " + saldo);
+        System.out.println("==========================");
     }
     
     //METODO aplicarInteres (pendiente)
