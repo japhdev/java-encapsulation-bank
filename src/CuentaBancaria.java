@@ -47,6 +47,11 @@ public class CuentaBancaria {
     // METODO transferir
     public void transferir(CuentaBancaria destino, double cantidad) {
 
+        if(this == destino){
+            System.out.println("No se puede transferir a la misma cuenta!");
+            return;
+        }
+
         if(this.retirar(cantidad )) {
             destino.depositar(cantidad);
             System.out.println("Transferencia exitosa: $" + cantidad);
