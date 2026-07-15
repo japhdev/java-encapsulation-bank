@@ -17,10 +17,12 @@ public class CuentaBancaria {
     public boolean depositar(double cantidad) {
         if (cantidad > 0) {     
             saldo += cantidad;
+            System.out.println("Numero de Cuenta: " + numeroCuenta);
             System.out.println("Deposito exitoso: $" + cantidad);
             System.out.println("Nuevo Saldo: $" + saldo);
             return true;
         } else {
+            System.out.println("Numero de Cuenta: " + numeroCuenta);
             System.out.println("Cantidad invalida para el deposito.");
             return false;
         }
@@ -35,10 +37,12 @@ public class CuentaBancaria {
 
         if (tieneSaldoSuficiente(cantidad)) {
             saldo -= cantidad;
+            System.out.println("Numero de Cuenta: " + numeroCuenta);
             System.out.println("Retiro exitoso: $" + cantidad);
             System.out.println("Nuevo saldo: $" + saldo);
             return true;
         } else {
+            System.out.println("Numero de Cuenta: " + numeroCuenta);
             System.out.println("Saldo insuficiente. Saldo actual: " + saldo);
             return false;
         }
@@ -54,6 +58,7 @@ public class CuentaBancaria {
 
         if(this.retirar(cantidad )) {
             destino.depositar(cantidad);
+            System.out.println("==========================");
             System.out.println("Transferencia exitosa: $" + cantidad);
             System.out.println("De: " + this.getTitular() + " (" + this.getNumeroCuenta() + ")");
             System.out.println("A: " + destino.getTitular() + " (" + destino.getNumeroCuenta() + ")");
