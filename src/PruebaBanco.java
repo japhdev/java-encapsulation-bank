@@ -15,6 +15,7 @@ public class PruebaBanco {
 
         // 3.Deposito de dinero
         System.out.println("\n ===DEPOSITO===");
+        
         cuenta1.depositar(500.0);
 
         // 4. Retiro de dinero
