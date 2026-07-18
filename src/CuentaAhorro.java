@@ -7,6 +7,7 @@ public class CuentaAhorro extends CuentaBancaria {
 
     CuentaAhorro(String titular, double saldoInicial, double tasaInteresAnual) {
         super(titular, saldoInicial);
+        this.tasaInteresAnual= tasaInteresAnual;
     }
 
     @Override
@@ -23,6 +24,25 @@ public class CuentaAhorro extends CuentaBancaria {
 
     @Override
     public void aplicarInteres(){
-        double interes = getSaldo
+
+        //Calcular interes mensual
+        double interes = getSaldo() * (tasaInteresAnual / 12);
+
+        // Deposito del interes
+        System.out.println("Aplicando interes mensual");
+        depositar(interes);
+
+        // Reinicio de contasdor de retiros 
+        retirosRealizados = 0;
+        System.out.println("Contador de retiros reiniciado..");
+    }
+    
+    public int getRetirosRestantes() {
+        return retirosPermitidos - retirosRealizados;
+    }
+    
+    
+    public double getTasaInteresAnual() {
+        return tasaInteresAnual;
     }
 }
