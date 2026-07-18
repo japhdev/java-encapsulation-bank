@@ -1,4 +1,4 @@
-// Clase hija
+// Clase hija CuentaAhorro
 public class CuentaAhorro extends CuentaBancaria {
 
     private double tasaInteresAnual;
@@ -10,18 +10,19 @@ public class CuentaAhorro extends CuentaBancaria {
     }
 
     @Override
-    public boolean retirar(double cantidad){
+    public boolean retirar(double cantidad) {
         if (retirosRealizados < retirosPermitidos) {
             super.retirar(cantidad);
             retirosRealizados += 1;
             return true;
-        }else{ 
+        } else {
             System.out.println("Excediste el numero de intentos permitido");
             return false;
         }
     }
 
-
-
-    
+    @Override
+    public void aplicarInteres(){
+        double interes = getSaldo
+    }
 }
