@@ -102,4 +102,9 @@ public class CuentaBancaria {
         return numeroCuenta;
     }
 
+    // METODO  getsaldo (double)
+    public double getSaldo() {
+    return saldo;
+}
+
 }
