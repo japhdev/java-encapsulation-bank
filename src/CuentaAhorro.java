@@ -7,22 +7,23 @@
  */
 public class CuentaAhorro extends CuentaBancaria {
 
-    //Atributos privados
+    // Atributos privados
     private double tasaInteresAnual;
     private int retirosPermitidos = 3;
     private int retirosRealizados = 0;
 
     /**
-     * Crea una nueva cuenta de ahorro con un titular, un saldo inicial y tasa de interés anual.
+     * Crea una nueva cuenta de ahorro con un titular, un saldo inicial y tasa de
+     * interés anual.
      *
-     * @param titular Nombre del titular de la cuenta.
-     * @param saldoInicial Saldo con el que se crea la cuenta.
+     * @param titular          Nombre del titular de la cuenta.
+     * @param saldoInicial     Saldo con el que se crea la cuenta.
      * @param tasaInteresAnual Tasa de interés anual.
      * 
      */
     CuentaAhorro(String titular, double saldoInicial, double tasaInteresAnual) {
         super(titular, saldoInicial);
-        this.tasaInteresAnual= tasaInteresAnual;
+        this.tasaInteresAnual = tasaInteresAnual;
     }
 
     /**
@@ -30,19 +31,25 @@ public class CuentaAhorro extends CuentaBancaria {
      *
      * @param cantidad Monto a retirar. Debe ser mayor que cero.
      * @return {@code true} si el retiro se realiza correctamente dentro del
-     *         límite de retiros permitidos; {@code false} si se excede dicho límite.
+     *         límite de retiros permitidos; {@code false} si se excede dicho
+     *         límite.
      */
     @Override
     public boolean retirar(double cantidad) {
-        if (retirosRealizados < retirosPermitidos) {
-            super.retirar(cantidad);
-            retirosRealizados += 1;
+
+        if (retirosRealizados >= retirosPermitidos) {
+            System.out.println("Excediste el numero de intentos permitido.");
+            return false;
+        }
+
+        if (super.retirar(cantidad)) {
+            retirosRealizados++;
             return true;
         } else {
-            System.out.println("Excediste el numero de intentos permitido");
             return false;
         }
     }
+
     /**
      * Sobrescribe el método de aplicación de intereses.
      *
@@ -50,7 +57,7 @@ public class CuentaAhorro extends CuentaBancaria {
      * y reinicia el contador de retiros realizados.
      */
     @Override
-    public void aplicarInteres(){
+    public void aplicarInteres() {
 
         double interes = getSaldo() * (tasaInteresAnual / 12);
 
@@ -60,7 +67,7 @@ public class CuentaAhorro extends CuentaBancaria {
         retirosRealizados = 0;
         System.out.println("Contador de retiros reiniciado..");
     }
-    
+
     /**
      * Obtiene los retiros restantes.
      *
@@ -69,12 +76,12 @@ public class CuentaAhorro extends CuentaBancaria {
     public int getRetirosRestantes() {
         return retirosPermitidos - retirosRealizados;
     }
-    
+
     /**
      * Obtiene la tasa de interés anual.
      *
      * @return Tasa de interés anual.
-     */  
+     */
     public double getTasaInteresAnual() {
         return tasaInteresAnual;
     }
