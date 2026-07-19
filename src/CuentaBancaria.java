@@ -3,7 +3,7 @@
  * depósito, retiro, transferencia, consulta de saldo y
  * visualización de información.
  *
- * @author Alan Hernández
+ * @author Josue Alan Pablo Hernández
  * @version 1.1
  */
 public class CuentaBancaria {
@@ -16,7 +16,7 @@ public class CuentaBancaria {
     /**
      * Crea una nueva cuenta bancaria con un titular y un saldo inicial.
      *
-     * El numero de cuenta se genera automaticamente.
+     * El numero de cuenta se genera automáticamente.
      *
      * @param titular Nombre del titular de la cuenta.
      * @param saldoInicial Saldo con el que se crea la cuenta.
@@ -101,7 +101,7 @@ public class CuentaBancaria {
     }
 
     /**
-     * Verifica si la cuenta tiene saldo suficiente para una operacion.
+     * Verifica si la cuenta tiene saldo suficiente para una operación.
      *
      * @param cantidad Monto que se desea validar.
      * @return {@code true} si el saldo es mayor o igual al monto indicado;
@@ -128,10 +128,10 @@ public class CuentaBancaria {
     /**
      * Aplica intereses al saldo de la cuenta.
      *
-     * Este metodo esta pensado para ser sobrescrito por las clases hijas.
+     * Este método esta pensado para ser sobrescrito por las clases hijas.
      */
     public void aplicarInteres() {
-        System.out.println("Esta cuenta no genera interes...");
+        System.out.println("Esta cuenta no genera interés...");
     }
 
     /**
