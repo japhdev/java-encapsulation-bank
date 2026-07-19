@@ -4,6 +4,8 @@
  * Sobrescribe el comportamiento del retiro y la aplicación de intereses,
  * además de proporcionar métodos para consultar la tasa de interés anual
  * y los retiros restantes.
+ *  
+ *  @version 1.1
  */
 public class CuentaAhorro extends CuentaBancaria {
 
