@@ -18,7 +18,7 @@ public class CuentaBancaria {
      *
      * El numero de cuenta se genera automáticamente.
      *
-     * @param titular Nombre del titular de la cuenta.
+     * @param titular      Nombre del titular de la cuenta.
      * @param saldoInicial Saldo con el que se crea la cuenta.
      */
     CuentaBancaria(String titular, double saldoInicial) {
@@ -161,4 +161,25 @@ public class CuentaBancaria {
         return saldo;
     }
 
+    /**
+     * Método protegido que permite a las clases hijas restar saldo.
+     * 
+     * @param cantidad Cantidad a restar del saldo
+     */
+    protected void restarSaldo(double cantidad) {
+        if (cantidad > 0) {
+            this.saldo -= cantidad;
+        }
+    }
+
+    /**
+     * Método protegido que permite a las clases hijas sumar saldo.
+     * 
+     * @param cantidad Cantidad a sumar al saldo
+     */
+    protected void sumarSaldo(double cantidad) {
+        if (cantidad > 0) {
+            this.saldo += cantidad;
+        }
+    }
 }
