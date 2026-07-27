@@ -28,7 +28,30 @@ public class CuentaInversion extends CuentaBancaria{
         this.tasaInteresAnual = tasaInteresAnual;
         this.plazoDias = plazoDias;
     }
+    
+    /**
+     * Sobrescribe el método de retiro para validar el plazo de la inversión.
+     *
+     * El retiro solo se permite si la inversión está cerrada y se ha
+     * cumplido el plazo establecido.
+     *
+     * @param cantidad Monto a retirar. Debe ser mayor que cero.
+     * @return {@code false} si la inversión está cerrada o el plazo de inversión aún no se ha cumplido.
+     */
+    @Override
+    public boolean retirar(double cantidad){
+        if(activa == false){
+            System.out.println("Cuenta cerrada");
+            return false;
+        }
 
+        if(diasTranscurridos < plazoDias){
+            int diasRestantes = plazoDias - diasTranscurridos;
+            System.out.println("Fondos bloqueados dias restantes:" + diasRestantes);
+            return false;
+        }
 
+        return super.retirar(cantidad);
+    }
 
 }
