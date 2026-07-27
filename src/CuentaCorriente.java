@@ -51,24 +51,30 @@ public class CuentaCorriente extends CuentaBancaria {
 
         if (cantidad > saldoDisponible) {
             System.out.println("Excedes el limite de sobregiro");
-            System.out.println("Saldo disponible con sobregiro" + saldoDisponible);
             return false;
         }
 
+        boolean sobregiroEnEsteRetiro = false; // local
+
         if (cantidad > getSaldo()) {
             tieneSobregiro = true;
+            sobregiroEnEsteRetiro = true;
             double usadoSobregiro = cantidad - getSaldo();
             System.out.println("Usando SOBREGIRO ! $: " + usadoSobregiro);
         }
-
-        boolean exito = super.retirar(cantidad);
-
-        if (exito && tieneSobregiro) {
+        if (sobregiroEnEsteRetiro) {
             System.out.println("Comision por sobregiro $: " + comisionSobregiro);
-            super.retirar(comisionSobregiro);
+            restarSaldo(comisionSobregiro);
+    
         }
+        restarSaldo(cantidad);
+        System.out.println("Numero de Cuenta: " + getNumeroCuenta());
+        System.out.println("Retiro exitoso: $" + cantidad);
+        System.out.println("Nuevo saldo: $" + getSaldo());
 
-        return exito;
+
+
+        return true;
 
     }
 
@@ -80,7 +86,7 @@ public class CuentaCorriente extends CuentaBancaria {
     @Override
     public void aplicarInteres() {
         System.out.println("cuenta corriente, comision mensual: $ 10.0");
-        super.retirar(10.00);
+        restarSaldo(10.00);
     }
 
     /**
